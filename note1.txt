@@ -1,0 +1,101 @@
+#Git 與 GitHub	
+Git 版本控制/共同開發/遊戲存檔	
+GitHub 遠端hosting 讓大家方便使用 類似google drive	
+	
+First Dowload "git bash"	
+Create Folder	> Right click 
+    - git bash
+	
+init folder	
+	>cmd : "git lnit"
+Create file	
+	> file name "hello.txt" & "hello2.txt"
+Check status	
+	git status 
+	untracked files = 還沒加入到git
+	
+Tracking file	
+	git add "filename"
+	git add .  資料夾下所有檔案
+	
+Save tracked file 	
+	git commit
+	git commit -m "hello"
+
+顯示提交紀錄
+    git log
+
+詳細提交紀錄
+    git show <commit>
+
+上傳檔案到gitHub 
+    login github > New repository  > fill repository name > Create repository
+    git remote add origin https://github.com/Dylan667986/Hello.git
+    #origin 是remote的名子
+
+列出所有remote 
+    git remote 
+
+將檔案上傳至github
+    git push -u origin master
+    此指令是將 所在的 branch 是(master) 
+    -u 則是將此指令設為預設
+    之後只要打 git push 實際行為是(git push origin master)
+#上傳成功後到gitHub 查看
+
+將gitHub repository 下載到本地端編輯
+    git clone <網址> #下載完成後不需要再init 
+
+
+git reset
+    刪除已註冊到索引的檔案
+    git reset -- 1.txt
+
+刪除已註冊到索引的檔案
+    git reset HEAD -- <file>
+
+git checkout
+    還原在工作目錄已更改的檔案
+    git checkout -- 1.txt
+
+
+git diff
+    會顯示工作目錄和索引的差異。
+    加上 --cached 參數，會顯示索引與 HEAD 的差異
+    git diff --cached
+
+git mv <oldfilename> <newfilename>
+    修改/移動檔案或目錄
+
+git rm <file>
+    刪除檔案
+
+git clean 
+    刪除目錄中非管理對象的檔案
+    -n 查看將被刪除的檔案
+    -f 立即刪除檔案
+
+git add -u
+    只註冊已提交過的檔案到索引
+
+git branch
+    顯示分支清單
+    -r 顯示遠端分支
+    -a 顯示遠端及本地分支
+
+git branch <branchname>
+    建立分支
+
+
+git branch -m <oldbranch> <newbranch>
+    修改分支的名稱
+
+git branch -d <branchname>
+    刪除分支
+
+ git checkout <branch>   
+    切換分支
+
+git merge <branch>
+    合併分支
+    --no-ff

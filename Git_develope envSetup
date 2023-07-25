@@ -1,0 +1,20 @@
+#VScode & command line
+
+Dowload windows store "Ubuntu"
+Dowload Ubuntu
+Install WSL (windows subsystem for Linux)
+    #Power shell (system manager) 
+    input : Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+Ubuntu change default path 
+    cd
+    pwd
+    HOME=/tmp/folder
+    export HOME
+    cd
+    pwd
+
+commandline login git
+    git config --global user.name "dylan"
+    git config --global user.email "luck667986@gmail.com"
+
