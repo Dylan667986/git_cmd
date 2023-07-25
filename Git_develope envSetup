@@ -17,4 +17,3 @@ Ubuntu change default path
 commandline login git
     git config --global user.name "dylan"
     git config --global user.email "luck667986@gmail.com"
-
