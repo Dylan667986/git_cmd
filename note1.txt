@@ -25,7 +25,7 @@ Save tracked file
 Edit past commit record :
     git rebase -i <commit>
     git commit --amend
-    git rebase --continue
+    git rebase --continue #下這個指令
 
     git rebase --abort #停止rebase
     
@@ -200,7 +200,7 @@ stash 暫存
 合併	        git merge	
 建立標籤	    git tag	
 更新	        git pull / git fetch	
-上傳到遠端	     git push	
+上傳到遠端	     git push / git push -f 
 忽視檔案清單	.gitignore
 
 
