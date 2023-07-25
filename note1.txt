@@ -205,5 +205,3 @@ stash 暫存
 更新	        git pull / git fetch	
 上傳到遠端	     git push / git push -f 
 忽視檔案清單	.gitignore
-
-77sad
