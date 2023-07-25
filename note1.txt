@@ -105,42 +105,44 @@ git clean
 git add -u
     只註冊已提交過的檔案到索引
 
-git branch
-    顯示分支清單
-    -r 顯示遠端分支
-    -a 顯示遠端及本地分支
+Branch/Merge
 
-git branch <branchname>
-    建立分支
+    git branch
+        顯示分支清單
+        -r 顯示遠端分支
+        -a 顯示遠端及本地分支
 
-git branch -m <oldbranch> <newbranch>
-    修改分支的名稱
+    git branch <branchname>
+        建立分支
 
-git branch -d <branchname>
-    刪除分支
+    git branch -m <oldbranch> <newbranch>
+        修改分支的名稱
 
- git checkout <branch>   
-    切換分支
+    git branch -d <branchname>
+        刪除分支
 
-git merge <branch>
-    合併分支
-    --no-ff
-    # 先切換到主分支
-    $ git checkout master
+    git checkout <branch>   
+        切換分支
+
+    git merge <branch>
+        合併分支
+        --no-ff
+        # 先切換到主分支
+        $ git checkout master
  
-    # 使用 fast-forward
-    $ git merge <branch>
+        # 使用 fast-forward
+        $ git merge <branch>
     
-    no-fast-forward
-    # 先切換到主分支
-    $ git checkout master
+        no-fast-forward
+        # 先切換到主分支
+        $ git checkout master
  
-    # 使用 no-fast-forward
-    $ git merge <branch> --no-ff 
+        # 使用 no-fast-forward
+        $ git merge <branch> --no-ff 
     
-    #使用 no-fast-forward 的模式，會長出小耳朵，可以讓成員在日後很清楚辨識不同的 commit 歷程所包含的功能有哪些，
-    #但是過多的小耳朵反而會造成混亂，所以就會需要 
-    #fast-forward 用來 merge 些較不重要的 commit，像是零碎的 bug fix，保持 git commit 的乾淨。
+        #使用 no-fast-forward 的模式，會長出小耳朵，可以讓成員在日後很清楚辨識不同的 commit 歷程所包含的功能有哪些，
+        #但是過多的小耳朵反而會造成混亂，所以就會需要 
+        #fast-forward 用來 merge 些較不重要的 commit，像是零碎的 bug fix，保持 git commit 的乾淨。
 
 
 tag 
