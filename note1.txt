@@ -56,11 +56,9 @@ Upload file to github
     之後只要打 git push 實際行為是(git push origin master)
     #上傳成功後到gitHub 查看
 
- 
-clone file to local 
+將gitHub repository 下載到本地端編輯
     git clone <網址> #下載完成後不需要再init 
-    git remote add <name> <url> #add remote repository
-    git remote   # remote list 
+
 
 git reset
     刪除已註冊到索引的檔案
@@ -75,7 +73,7 @@ git reset HEAD -- <file>
 git checkout
     還原在工作目錄已更改的檔案
     git checkout -- 1.txt
-    git checkout <branch> #從遠端repository複製branch到本地端repository建立branch
+
 
 git diff
     會顯示工作目錄和索引的差異。
