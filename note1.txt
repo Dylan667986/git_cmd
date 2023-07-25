@@ -20,6 +20,20 @@ Tracking file
 Save tracked file 	
 	git commit
 	git commit -m "hello"
+    git commit --amend #修改最近的提交記錄 /只修改最近的提交記錄的註解
+
+Edit past commit record :
+    git rebase -i <commit>
+    git commit --amend
+    git rebase --continue
+
+    git rebase --abort #停止rebase
+
+Check HEAD move log 
+    git reflog
+
+Check branch move log 
+    git reflog <ref>
 
 Show commit log
     git log
@@ -42,19 +56,26 @@ Upload file to github
     之後只要打 git push 實際行為是(git push origin master)
     #上傳成功後到gitHub 查看
 
+ 
 clone file to local 
     git clone <網址> #下載完成後不需要再init 
+    git remote add <name> <url> #add remote repository
+    git remote   # remote list 
 
 git reset
     刪除已註冊到索引的檔案
     git reset -- 1.txt
+    git reset --soft HEAD~1 #回到$個command之前
+    git reset --hard HEAD~ #刪除最近提交
+    git reset --hard ORIG_HEAD #取消最近reset
 
-刪除已註冊到索引的檔案
-    git reset HEAD -- <file>
-
+git reset HEAD -- <file>
+    刪除已註冊到索引的檔案
+    
 git checkout
     還原在工作目錄已更改的檔案
     git checkout -- 1.txt
+    git checkout <branch> #從遠端repository複製branch到本地端repository建立branch
 
 git diff
     會顯示工作目錄和索引的差異。
@@ -95,3 +116,61 @@ git branch -d <branchname>
 git merge <branch>
     合併分支
     --no-ff
+
+tag 
+    git tag   #show tag list
+    git tag <tagname>  #create tag
+    git tag -a <tagname> #create 含註解 tag
+    git tag -d <tagname> #del tag
+
+git cherry-pick "<commit>"
+    複製在另一個分支的提交
+
+git log --grep "<pattern>"
+    尋找包含特定註解的提交
+
+
+other 
+    git push <repository> <refspec> #在遠端數據庫建立分支/push修改內容到分支
+    git fetch <repository> <refspec>  #查看遠端數據庫分支的修改內容
+    git pull <repository> <refspec> #合併遠端數據庫的分支的修改內容
+    git push --delete <repository> <branchname> #刪除遠端數據庫的分支
+    git push --tags #在遠端數據庫建立標籤
+    git push --delete <repository> <tagname> #刪除在遠端數據庫的標籤
+    git remote set-url <name> <newurl> #修改已註冊的遠端數據庫的位址
+    git remote rename <old> <new> #修改已註冊的遠端數據庫名稱
+
+env 
+    git config --global user.name <username>
+    git config --global user.email <mailaddress>
+
+    git config --global color.ui auto
+    git config --global alias.<aliasname> <commandname> #設定命令的別名
+    echo <filename> >> .gitignore #忽略檔案使其不被管理
+    git config --global --list #顯示設定清單
+
+stash 暫存
+    git stash save
+    git stash list
+    git stash pop #恢復暫存的操作
+    git stash drop
+    git stash clear
+    
+
+複製數據庫	       git clone	    
+提交	           git commit	   
+查看提交的詳細記錄	git show	    
+確認狀態	    git status	   
+確認差異	    git diff	    
+確認記錄	    git log	        
+增加	        git add	         
+移動	        git mv	           
+刪除	        git rm	            
+取消修改	    git checkout / git reset	
+建立分支	    git branch	
+切換分支	    git checkout	
+合併	        git merge	
+建立標籤	    git tag	
+更新	        git pull / git fetch	
+上傳到遠端	     git push	
+忽視檔案清單	.gitignore
