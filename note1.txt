@@ -120,7 +120,7 @@ git branch -m <oldbranch> <newbranch>
 
 git branch -d <branchname>
     刪除分支
-
+git push <remote> -d <remoteBranchName>
  git checkout <branch>   
     切換分支
 
