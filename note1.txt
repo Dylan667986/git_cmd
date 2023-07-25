@@ -28,6 +28,17 @@ Edit past commit record :
     git rebase --continue
 
     git rebase --abort #停止rebase
+    
+
+        #把另外一個分支的變更，當成我這個分支的基礎
+        # 切換至 branch1 分支：
+        git checkout branch1
+ 
+        # 然後執行 Rebase 動作，把 master 當成我們的基礎版本： 
+         git rebase master
+
+        修改歷史 commit 紀錄
+        git rebase -i HEAD~3
 
 Check HEAD move log 
     git reflog
@@ -114,6 +125,23 @@ git branch -d <branchname>
 git merge <branch>
     合併分支
     --no-ff
+    # 先切換到主分支
+    $ git checkout master
+ 
+    # 使用 fast-forward
+    $ git merge <branch>
+    
+    no-fast-forward
+    # 先切換到主分支
+    $ git checkout master
+ 
+    # 使用 no-fast-forward
+    $ git merge <branch> --no-ff 
+    
+    #使用 no-fast-forward 的模式，會長出小耳朵，可以讓成員在日後很清楚辨識不同的 commit 歷程所包含的功能有哪些，
+    #但是過多的小耳朵反而會造成混亂，所以就會需要 
+    #fast-forward 用來 merge 些較不重要的 commit，像是零碎的 bug fix，保持 git commit 的乾淨。
+
 
 tag 
     git tag   #show tag list
@@ -176,4 +204,4 @@ stash 暫存
 
 
 
-更動1
+修改2
